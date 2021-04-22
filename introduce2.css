@@ -17,19 +17,19 @@ P {
     font-weight: 800;
     font-size: 1.8em;
     line-height: 2;
-    color:rgb(255, 56, 89);
+    color:#ff7900;
 }
 .titi{
-    font-weight: 800;
+  font-weight: 800;
     font-size: 50px;
     line-height: 4;
-    padding: 15px;    
+    padding: 15px;      
 }
 li {
     font-size: 17px;
     line-height: 2;
     font-weight: 800;
-    color: rgb(255, 133, 154);
+    color: #ffaa00;
 }
 h2.t2-himawari {
     background-color: #f5cb5c;
@@ -71,7 +71,7 @@ h2.t2-himawari span {
     font-size: 1.8em;
     text-transform: uppercase;
     letter-spacing: 0.5em;
-    color:rgb(255, 56, 89);
+    color:#ff7900;
   }
   
 .ml15 .word {

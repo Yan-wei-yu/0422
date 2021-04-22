@@ -21,6 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
     <!-- Bootstrap CSS -->
+    <script src="introduce.js"></script>
     <link rel="stylesheet" type="text/css" href="introduce.css" >
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -90,7 +91,7 @@
 </div>
 <br><br><br><br>
   <div class="container">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
     <h1 class="ml5 text-center">
       <span class="text-wrapper">
         <span class="line line1"></span>
@@ -112,16 +113,27 @@
       </div>
       <div class="col-lg-6">
         <h2 class="t2-rose"><span>班級風格</span>   玫瑰班</h2>
-        <p>快樂學習 多元發展</p>
+        <h1 class="ml15">
+          <span class="word">菁英中心</span>
+          <span class="word">不收拉基</span>
+        </h1>
         <ul>
           <li>個人興趣培養</li>
           <li>特殊才藝培養</li>
-          <li>學員自由發展</li>
-          <li>激發創意</li>
+          <li>專業人才培訓</li>
+          <li>高壓教學管理</li>
         </ul>
-        <p>無憂無慮 快樂學習</p>
+        <h1 class="ml15">
+          <span class="word">力爭上游</span>
+          <span class="word">努力向上</span>
+        </h1>
       </div>
     </div>
+      <h1 class="ml12 text-center">
+        <span class="titi">
+        <span class='letter'style="color: rgb(255, 56, 89);">日常活動</span>
+        </span>
+      </h1>
     <div class="row my-3">
       <div class="col-lg-6">
         <h2 class="t2-rose"><span>榮譽榜</span>   TOP5</h2>
@@ -133,7 +145,7 @@
           <li>電能寺 義我男 全國幼稚園高爾夫大賽第一名</li>
           <li>互美田 月人 全國丟垃圾大賽第一名</li>
         </ul>
-        <p>恭喜以上學員能在個人專業領域上屢獲佳績</p>
+        <p>恭喜學員在個人專業領域上獲得佳績</p>
       </div>
       <div class="col-lg-6 mb-4" data-aos="zoom-in">
         <div id="carlBanner" class="carousel slide" data-ride="carousel">
@@ -195,47 +207,85 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="./introduce.js"></script>
     <!--動畫字幕JS-->
-    <script>anime.timeline({loop: true})
-      .add({
-        targets: '.ml5 .line',
-        opacity: [0.5,1],
-        scaleX: [0, 1],
-        easing: "easeInOutExpo",
-        duration: 700
-      }).add({
-        targets: '.ml5 .line',
-        duration: 600,
-        easing: "easeOutExpo",
-        translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
-      }).add({
-        targets: '.ml5 .ampersand',
-        opacity: [0,1],
-        scaleY: [0.5, 1],
-        easing: "easeOutExpo",
-        duration: 600,
-        offset: '-=600'
-      }).add({
-        targets: '.ml5 .letters-left',
-        opacity: [0,1],
-        translateX: ["0.5em", 0],
-        easing: "easeOutExpo",
-        duration: 600,
-        offset: '-=300'
-      }).add({
-        targets: '.ml5 .letters-right',
-        opacity: [0,1],
-        translateX: ["-0.5em", 0],
-        easing: "easeOutExpo",
-        duration: 600,
-        offset: '-=600'
-      }).add({
-        targets: '.ml5',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 8000
-      });</script>
+    <script>
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml15 .word',
+    scale: [14,1],
+    opacity: [0,1],
+    easing: "easeOutCirc",
+    duration: 800,
+    delay: (el, i) => 800 * i
+  }).add({
+    targets: '.ml15',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 10000
+  });
+anime.timeline({loop: true})
+  .add({
+  targets: '.ml12 .letter',
+  translateX: [40,0],
+  translateZ: 0,
+  opacity: [0,1],
+  easing: "easeOutExpo",
+  duration: 1200,
+  delay: (el, i) => 500 + 30 * i
+  }).add({
+  targets: '.ml12 .letter',
+  translateX: [0,-30],
+  opacity: [1,0],
+  easing: "easeInExpo",
+  duration: 1100,
+  delay: (el, i) => 100 + 30 * i
+  });
+anime.timeline({loop: true})
+  .add({
+  targets: '.ml5 .line',
+  opacity: [0.5,1],
+  scaleX: [0, 1],
+  easing: "easeInOutExpo",
+  duration: 700
+  }).add({
+  targets: '.ml5 .line',
+  duration: 600,
+  easing: "easeOutExpo",
+  translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
+  }).add({
+  targets: '.ml5 .ampersand',
+  opacity: [0,1],
+  scaleY: [0.5, 1],
+  easing: "easeOutExpo",
+  duration: 600,
+  offset: '-=600'
+  }).add({
+  targets: '.ml5 .letters-left',
+  opacity: [0,1],
+  translateX: ["0.5em", 0],
+  easing: "easeOutExpo",
+  duration: 600,
+  offset: '-=300'
+  }).add({
+  targets: '.ml5 .letters-right',
+  opacity: [0,1],
+  translateX: ["-0.5em", 0],
+  easing: "easeOutExpo",
+  duration: 600,
+  offset: '-=600'
+  }).add({
+  targets: '.ml5',
+  opacity: 0,
+  duration: 1000,
+  easing: "easeOutExpo",
+  delay: 10000
+});     
+    
+
+      </script>
         <style>
           .bg {
               position: fixed;

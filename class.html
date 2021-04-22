@@ -22,6 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="introduce2.css" >
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="course.css" rel="stylesheet" type="text/css" />
@@ -73,6 +74,13 @@
 
     }
 
+    #MyBlog #title {
+      color: rgb(255, 255, 255);
+      padding-right: 5px;
+      /*讓標題與連結中間有空隙*/
+   
+
+    }
   </style>
 
 </head>
@@ -132,8 +140,8 @@
     <h1 class="ml5 text-center">
       <span class="text-wrapper">
         <span class="line line1"></span>
-        <span class="letter letters-left" style="color: rgb(255, 56, 89);">向日葵班</span>
-        <span class="letters letters-right" style="color: rgb(255, 133, 154);">班級介紹</span>
+        <span class="letter letters-left" style="color: #ffaa00">向日葵班</span>
+        <span class="letters letters-right" style="color: #f5cb5c">班級介紹</span>
         <span class="line line2"></span>
       </span>
     </h1>
@@ -146,23 +154,34 @@
 
     <div class="row">
       <div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-        <img class="img-fluid rounded" data-aos="flip-left" src="img/tka1.jpg" alt="">
+        <img class="img-fluid rounded" data-aos="fade-right" src="img/tka1.jpg" alt="">
       </div>
       <div class="col-lg-6">
-        <h2>班級風格</h2>
-        <p>快樂學習 多元發展</p>
+        <h2 class="t2-himawari"><span>班級風格</span>   向日葵班</h2>
+        <h1 class="ml15">
+          <span class="word">快樂學習</span>
+          <span class="word">多元發展</span>
+        </h1>
         <ul>
           <li>個人興趣培養</li>
           <li>特殊才藝培養</li>
           <li>學員自由發展</li>
-          <li>激發創意</li>
+          <li>鼓勵創意創作</li>
         </ul>
-        <p>無憂無慮 快樂學習</p>
+        <h1 class="ml15">
+          <span class="word">無憂無慮</span>
+          <span class="word">美好童年</span>
+        </h1>
       </div>
     </div>
+    <h1 class="ml12 text-center">
+      <span class="titi">
+      <span class='letter'style="color: #ffaa00">日常活動</span>
+      </span>
+    </h1>
     <div class="row my-3">
       <div class="col-lg-6">
-        <h2>榮譽榜</h2>
+        <h2 class="t2-himawari"><span>榮譽榜</span>   TOP5</h2>
         <p>歷年學員比賽獲獎紀錄</p>
         <ul>
           <li>櫻田妮妮 全國幼稚園揍兔子大賽第一名</li>
@@ -171,7 +190,7 @@
           <li>野原新之助 全國露屁屁大賽第一名</li>
           <li>風間徹 全國可愛P模仿大賽第一名</li>
         </ul>
-        <p>恭喜以上學員能在個人專業領域上屢獲佳績</p>
+        <p>恭喜學員在個人專業領域上獲得佳績</p>
       </div>
       <div class="col-lg-6 mb-4" data-aos="zoom-in">
         <div id="carlBanner" class="carousel slide" data-ride="carousel">
@@ -239,46 +258,82 @@
     AOS.init();
   </script>
   <!--動畫字幕JS-->
-  <script>anime.timeline({ loop: true })
+  <script>
+    anime.timeline({loop: true})
+  .add({
+    targets: '.ml15 .word',
+    scale: [14,1],
+    opacity: [0,1],
+    easing: "easeOutCirc",
+    duration: 800,
+    delay: (el, i) => 800 * i
+  }).add({
+    targets: '.ml15',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 10000
+  });
+    anime.timeline({loop: true})
       .add({
-        targets: '.ml5 .line',
-        opacity: [0.5, 1],
-        scaleX: [0, 1],
-        easing: "easeInOutExpo",
-        duration: 700
+      targets: '.ml12 .letter',
+      translateX: [40,0],
+      translateZ: 0,
+      opacity: [0,1],
+      easing: "easeOutExpo",
+      duration: 1200,
+      delay: (el, i) => 500 + 30 * i
       }).add({
-        targets: '.ml5 .line',
-        duration: 600,
-        easing: "easeOutExpo",
-        translateY: (el, i) => (-0.625 + 0.625 * 2 * i) + "em"
+      targets: '.ml12 .letter',
+      translateX: [0,-30],
+      opacity: [1,0],
+      easing: "easeInExpo",
+      duration: 1100,
+      delay: (el, i) => 100 + 30 * i
+      });
+    anime.timeline({loop: true})
+      .add({
+      targets: '.ml5 .line',
+      opacity: [0.5,1],
+      scaleX: [0, 1],
+      easing: "easeInOutExpo",
+      duration: 700
       }).add({
-        targets: '.ml5 .ampersand',
-        opacity: [0, 1],
-        scaleY: [0.5, 1],
-        easing: "easeOutExpo",
-        duration: 600,
-        offset: '-=600'
+      targets: '.ml5 .line',
+      duration: 600,
+      easing: "easeOutExpo",
+      translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
       }).add({
-        targets: '.ml5 .letters-left',
-        opacity: [0, 1],
-        translateX: ["0.5em", 0],
-        easing: "easeOutExpo",
-        duration: 600,
-        offset: '-=300'
+      targets: '.ml5 .ampersand',
+      opacity: [0,1],
+      scaleY: [0.5, 1],
+      easing: "easeOutExpo",
+      duration: 600,
+      offset: '-=600'
       }).add({
-        targets: '.ml5 .letters-right',
-        opacity: [0, 1],
-        translateX: ["-0.5em", 0],
-        easing: "easeOutExpo",
-        duration: 600,
-        offset: '-=600'
+      targets: '.ml5 .letters-left',
+      opacity: [0,1],
+      translateX: ["0.5em", 0],
+      easing: "easeOutExpo",
+      duration: 600,
+      offset: '-=300'
       }).add({
-        targets: '.ml5',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 8000
-      });</script>
+      targets: '.ml5 .letters-right',
+      opacity: [0,1],
+      translateX: ["-0.5em", 0],
+      easing: "easeOutExpo",
+      duration: 600,
+      offset: '-=600'
+      }).add({
+      targets: '.ml5',
+      opacity: 0,
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 10000
+    });     
+        
+    
+          </script>
         <style>
           .bg {
               position: fixed;
